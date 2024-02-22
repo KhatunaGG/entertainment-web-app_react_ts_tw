@@ -41,7 +41,7 @@ const Root = () => {
         <img className='avatar w-6 h-6' src="/assets/image-avatar.png" alt="" />
       </header>
 
-      <div className='w-full flex items-center justify-start gap-4  mb-4 md:gap-6  md:mb-8'>
+      <div className='w-[91.46%]  flex items-center justify-start gap-4  mb-4 md:gap-6  md:mb-8'>
         <img className='w-6 h-6 md:h-8 md:w-8 bg-[var(--dark-blue)]' src="/assets/search.svg" alt="" />
 
         <input className='bg-[var(--dark-blue)] border-none outline-none' type="text" placeholder='Search for movies or TV series' />

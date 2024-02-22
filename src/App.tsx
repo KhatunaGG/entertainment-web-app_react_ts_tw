@@ -8,7 +8,7 @@ import Root from './Pages/Root'
 import { createContext, useState, useEffect } from 'react'
 import jsonData from './data.json'
 import { IData } from './interface'
-import data from './data.json'
+// import data from './data.json'
 
 type GlobalStateType = {
   screenWidth: number;
@@ -47,34 +47,16 @@ function App() {
   ))
 
 
-
-
-
-
-
-
   return (
     <div className='App w-full  h-screen flex flex-col items-center bg-[#10141E] '>
       <GlobalState.Provider value={{
         screenWidth,
         data,
       }}>
-
-
-
         <RouterProvider router={router}></RouterProvider>
-
       </GlobalState.Provider>
     </div>
 
-    // <Router>
-    //    <Routes>
-    //     <Route path='/' element={<Home />} />
-    //     <Route path='/movies' element={<Movies />} />
-    //     <Route path='/tv' element={<TVSeries />} />
-    //     <Route path='./bm' element={<Bookmark />} />
-    //   </Routes>
-    // </Router>
   )
 }
 
