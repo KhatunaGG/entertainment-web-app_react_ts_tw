@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { GlobalState } from '../App';
 
@@ -7,6 +7,7 @@ const Root = () => {
   const context = useContext(GlobalState);
   if (!context) return null;
   const { screenWidth } = context;
+
 
 
   return (

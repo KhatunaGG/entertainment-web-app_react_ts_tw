@@ -36,7 +36,10 @@ const Carusel = () => {
                 {data.filter((el) => el.thumbnail.trending).map((item) => (
                     <SwiperSlide key={item.title} >
                         <div className="slide w-full flex flex-row mb-10">
-                            <div style={{ width: screenWidth < 375 ? '240px' : '470px', height: screenWidth < 375 ? '140px' : '230px', borderRadius: '8px', position: 'relative' }}>
+
+
+
+                            <div className='' style={{ width: screenWidth < 375 ? '240px' : '470px', height: screenWidth < 375 ? '140px' : '230px', borderRadius: '8px', position: 'relative' }}>
                                 <div className='w-full group relative'>
                                     {screenWidth > 375 ? (
                                         <img
@@ -55,10 +58,14 @@ const Carusel = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='absolute top-2 right-2 md:top-4 md:right-6  w-8 h-8 bg-[#5A698F] rounded-full flex items-center justify-center'>
+                                <div className='absolute top-[4.84%] right-[4.84%]  w-8 h-8 bg-[#5A698F] rounded-full flex items-center justify-center'>
                                     <img className='' src="/assets/icon-bookmark-empty.svg" alt="" />
                                 </div>
                             </div>
+
+
+
+
                             <div className="info absolute top-[65.83%] left-[4.65%] flex flex-col items-center">
                                 <div className="etails flex flex-row items-center  gap-2">
                                     <div className="year text-xs">{item.year}</div>

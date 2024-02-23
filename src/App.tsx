@@ -10,9 +10,13 @@ import jsonData from './data.json'
 import { IData } from './interface'
 // import data from './data.json'
 
+
+
 type GlobalStateType = {
   screenWidth: number;
   data: IData[];
+  setBookmarked: React.Dispatch<React.SetStateAction<boolean>>;
+  bookmarked: boolean
 }
 
 export const GlobalState = createContext<GlobalStateType | null>(null)
@@ -20,7 +24,7 @@ export const GlobalState = createContext<GlobalStateType | null>(null)
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [data, setData] = useState<IData[]>(jsonData)
-
+  const [bookmarked, setBookmarked] = useState(false)
 
 
 
@@ -52,6 +56,8 @@ function App() {
       <GlobalState.Provider value={{
         screenWidth,
         data,
+        setBookmarked,
+        bookmarked
       }}>
         <RouterProvider router={router}></RouterProvider>
       </GlobalState.Provider>

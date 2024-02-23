@@ -8,7 +8,7 @@ function Home() {
 
   const context = useContext(GlobalState);
   if (!context) return null;
-  const { screenWidth, data } = context;
+  const { screenWidth, data, setBookmarked, bookmarked} = context;
 
 
 
@@ -22,20 +22,37 @@ function Home() {
       <h2 className='text-sm md:text-[32px] mb-4 md:mb-6 lg:mb-8'>Recommended for you</h2>
       <div className="grid grid-cols-2 gap-8  md:grid-cols-3 lg:grid-cols-4">
 
-        {/* <div className='absolute top-0 right-0 md:top-0 md:right-0  w-8 h-8 bg-red-600 rounded-full flex items-center justify-center'>
-          <img className='' src="/assets/icon-bookmark-empty.svg" alt="" />
-        </div> */}
+
 
         {data.filter((el) => el.thumbnail.regular).map((item) => (
           <div key={item.title} className="col-span-1 flex flex-col">
-            {screenWidth > 375 ? (
-              <img className='rounded-lg' src={item.thumbnail.regular.medium} alt="" />
-            )
-              : screenWidth > 768 ? (
-                <img className='rounded-lg' src={item.thumbnail.regular.large} alt="" />
-              ) :
-                <img className='rounded-lg' src={item.thumbnail.regular.small} alt="" />
-            }
+            <div className='w-full relative'>
+
+              {screenWidth > 375 ? (
+                <img className='rounded-lg' src={item.thumbnail.regular.medium} alt="" />
+              )
+                : screenWidth > 768 ? (
+                  <img className='rounded-lg' src={item.thumbnail.regular.large} alt="" />
+                ) :
+                  <img className='rounded-lg' src={item.thumbnail.regular.small} alt="" />
+              }
+
+
+
+              
+
+              <div
+              onClick={() => setBookmarked(!bookmarked)}
+              className='absolute top-[4.84%] right-[4.84%]  w-8 h-8 bg-[#5A698F] rounded-full flex items-center justify-center'>
+                {/* <img className='' src="/assets/icon-bookmark-empty.svg" alt="" /> */}
+                <img className='' src={bookmarked ? "/assets/icon-bookmark-full.svg" : "/assets/icon-bookmark-empty.svg"} alt="" />
+              </div>
+
+
+
+
+
+            </div>
 
 
 
@@ -54,12 +71,6 @@ function Home() {
               </div>
               <h3 className='title text-[15px] w-full text-left '>{item.title}</h3>
             </div>
-
-
-
-
-
-
           </div>
         ))}
       </div>
